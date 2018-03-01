@@ -13,7 +13,7 @@ class SystemView(FlaskView):
     def doShutdown(self):
         time.sleep(5)
         from subprocess import call
-        call("halt")
+        call(["sudo", "halt"])
 
     @route('/shutdown', methods=['POST'])
     def shutdown(self):
@@ -28,7 +28,7 @@ class SystemView(FlaskView):
     def doReboot(self):
         time.sleep(5)
         from subprocess import call
-        call("reboot")
+        call(["sudo", "reboot"])
 
     @route('/reboot', methods=['POST'])
     def reboot(self):

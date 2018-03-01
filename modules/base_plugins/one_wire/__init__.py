@@ -99,8 +99,8 @@ class ONE_WIRE_SENSOR(SensorPassive):
     @classmethod
     def init_global(self):
         try:
-            call(["modprobe", "w1-gpio"])
-            call(["modprobe", "w1-therm"])
+            call(["sudo", "modprobe", "w1-gpio"])
+            call(["sudo", "modprobe", "w1-therm"])
         except Exception as e:
             pass
 
